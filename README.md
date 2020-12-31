@@ -36,10 +36,18 @@ A React Native typescript starter template using RealmJS.
     }
 ```
 
+### Running
+
+```
+yarn
+cd ios && pod install
+```
+
 ### Dependencies
 
 - [RealmJS](https://realm.io/docs/javascript/latest/)
 - [Eva icons](https://github.com/artyorsh/react-native-eva-icons)
+- [RXJS](https://rxjs-dev.firebaseapp.com/guide/overview)
 
 ### Features
 
