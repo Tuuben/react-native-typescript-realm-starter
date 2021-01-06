@@ -1,4 +1,5 @@
 ### temp
+
 https://medium.com/@mehrankhandev/ultimate-guide-to-use-custom-fonts-in-react-native-77fcdf859cf4
 https://mortenbarklund.com/blog/react-architecture-provider-pattern/
 
@@ -51,7 +52,6 @@ cd ios && pod install
 
 - [RealmJS](https://realm.io/docs/javascript/latest/)
 - [Eva icons](https://github.com/artyorsh/react-native-eva-icons)
-- [RXJS](https://rxjs-dev.firebaseapp.com/guide/overview)
 
 ### Features
 
