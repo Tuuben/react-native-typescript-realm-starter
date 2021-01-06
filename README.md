@@ -5,8 +5,8 @@ A React Native typescript starter template using RealmJS.
 ### Renaming the project
 
 ```
-    npx react-native-rename <newName>
-    cd ios && pod install
+npx react-native-rename <newName>
+cd ios && pod install
 ```
 
 ### Running
