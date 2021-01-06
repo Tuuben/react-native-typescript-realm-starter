@@ -1,5 +1,5 @@
-export type Schema<T> = {
+export type Schema = {
   name: string;
   primaryKey?: string;
-  properties: T;
+  properties: any;
 };
