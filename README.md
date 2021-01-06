@@ -1,8 +1,3 @@
-### temp
-
-https://medium.com/@mehrankhandev/ultimate-guide-to-use-custom-fonts-in-react-native-77fcdf859cf4
-https://mortenbarklund.com/blog/react-architecture-provider-pattern/
-
 # React native starter template
 
 A React Native typescript starter template using RealmJS.
