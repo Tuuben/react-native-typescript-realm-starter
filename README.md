@@ -4,36 +4,9 @@ A React Native typescript starter template using RealmJS.
 
 ### Renaming the project
 
-1. Change the name attribute in `package.json`
-
 ```
-    // From
-    "name": "ReactNativeTemplate",
-
-    // To
-    "name": "MyAwesomeApp",
-```
-
-2. Run upgrade
-
-```
-    react-native upgrade
-```
-
-3. Update app name in `app.json`
-
-```
-    // From
-    {
-        "name": "ReactNativeTemplate",
-        "displayName": "ReactNativeTemplate"
-    }
-
-    // To
-    {
-        "name": "MyAwesomeApp",
-        "displayName": "MyAwesomeApp"
-    }
+    npx react-native-rename <newName>
+    cd ios && pod install
 ```
 
 ### Running
