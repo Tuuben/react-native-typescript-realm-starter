@@ -3,4 +3,5 @@ export default {
   backgroundSecondary: '#2d3133',
   primaryHiglight: '#4fd6ff',
   white: '#fff',
+  lightGrey: '#ccc',
 };

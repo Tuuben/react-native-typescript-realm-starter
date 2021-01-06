@@ -1,6 +1,6 @@
 import {RouteProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Button,
   SafeAreaView,
@@ -25,19 +25,17 @@ export type HomeNavigatorProps = {
 
 const HomeView = ({navigation, route}: HomeNavigatorProps) => {
   const realm = useRealm();
-  const notes = realm?.objects('Note');
-  // const [notes, setNotes] = useState<Results<Realm.Object & Note>>();
   const [inputText, setInputText] = useState<string>('');
+  const [allNotes, setAllNotes] = useState<
+    Realm.Results<Note & Realm.Object>
+  >();
 
-  /*  useEffect(() => {
-    const fetchedNotes = realm?.objects<Note>('Note');
-
-    setNotes(fetchedNotes);
+  useEffect(() => {
+    setAllNotes(realm?.objects('Note'));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); */
+  }, [realm]);
 
   const addNote = () => {
-    console.log('add note ', inputText);
     if (!inputText) {
       return;
     }
@@ -61,8 +59,8 @@ const HomeView = ({navigation, route}: HomeNavigatorProps) => {
           <View style={styles.body}>
             <Text style={styles.sectionTitle}>React starter template</Text>
             <View style={styles.cardContainer}>
-              {notes?.map((note) => (
-                <View style={styles.card}>
+              {allNotes?.map((note) => (
+                <View style={styles.card} key={note.noteId}>
                   <Text style={styles.cardText}>{note.text}</Text>
                 </View>
               ))}
@@ -125,7 +123,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     height: 48,
-    borderColor: theme.palette.white,
+    borderColor: theme.palette.lightGrey,
     color: theme.palette.white,
     borderWidth: 1,
     paddingHorizontal: theme.spacing.space16,
