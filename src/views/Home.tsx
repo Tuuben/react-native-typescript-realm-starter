@@ -11,6 +11,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {NavigationParamList} from '../navigator/MainNavigator';
 import {useRealm} from '../realm/realmContext';
 import {Note} from '../realm/schemas/NoteSchema';
@@ -73,11 +74,9 @@ const HomeView = ({navigation, route}: HomeNavigatorProps) => {
               value={inputText}
             />
             <View style={styles.buttonContainer}>
-              <Button
-                onPress={addNote}
-                title="Add note"
-                color={theme.palette.primaryHiglight}
-              />
+              <TouchableOpacity onPress={addNote}>
+                <Text style={styles.buttonText}>Add note</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </ScrollView>
@@ -107,6 +106,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     color: theme.palette.white,
+    fontFamily: theme.typography.primaryFontBold,
   },
   cardContainer: {
     marginVertical: theme.spacing.space32,
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
   cardText: {
     color: theme.palette.white,
     fontSize: theme.typography.normal,
+    fontFamily: theme.typography.primaryFontMedium,
   },
   textInput: {
     height: 48,
@@ -129,9 +130,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: theme.spacing.space16,
     width: '100%',
     borderRadius: 6,
+    fontFamily: theme.typography.primaryFontMedium,
   },
   buttonContainer: {
     marginTop: theme.spacing.space16,
+    width: '100%',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  buttonText: {
+    color: theme.palette.primaryHiglight,
+    fontFamily: theme.typography.primaryFontMedium,
+    fontSize: theme.typography.normal,
   },
 });
 
